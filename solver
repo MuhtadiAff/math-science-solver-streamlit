@@ -1,0 +1,54 @@
+from sympy import symbols, Eq, solve, integrate, diff, sympify
+
+def solve(problem_text):
+    try:
+        x = symbols('x')
+        # Deteksi jenis soal
+        if "integral" in problem_text.lower():
+            expr = problem_text.lower().replace("integral dari", "").strip()
+            f = sympify(expr)
+            result = integrate(f, x)
+            return f"∫ {f} dx = {result} + C"
+        elif "turunan" in problem_text.lower():
+            expr = problem_text.lower().replace("turunan dari", "").strip()
+            f = sympify(expr)
+            result = diff(f, x)
+            return f"d/dx {f} = {result}"
+        elif "persamaan" in problem_text.lower():
+            expr = problem_text.lower().replace("persamaan", "").strip()
+            eq = Eq(sympify(expr), 0)
+            result = solve(eq, x)
+            return f"Penyelesaian dari {eq} adalah: {result}"
+        else:
+            return "Jenis soal tidak dikenali. Coba gunakan kata kunci seperti 'integral', 'turunan', atau 'persamaan'."
+    except Exception as e:
+        return f"Terjadi kesalahan saat menyelesaikan soal: {e}"
+
+def solve(problem_text):
+    try:
+        # Contoh sederhana: F = m × a
+        if "gaya" in problem_text.lower() and "massa" in problem_text.lower() and "percepatan" in problem_text.lower():
+            # Ekstrak nilai
+            words = problem_text.lower().split()
+            m = float(words[words.index("massa") + 1])
+            a = float(words[words.index("percepatan") + 1])
+            F = m * a
+            return f"Gaya (F) = {m} × {a} = {F} N"
+        else:
+            return "Soal fisika belum dikenali. Coba gunakan format seperti 'massa 10 percepatan 2'."
+    except Exception as e:
+        return f"Terjadi kesalahan saat menyelesaikan soal fisika: {e}"
+
+def solve(problem_text):
+    try:
+        # Contoh: hitung mol dari massa dan Mr
+        if "mol" in problem_text.lower() and "massa" in problem_text.lower() and "mr" in problem_text.lower():
+            words = problem_text.lower().split()
+            massa = float(words[words.index("massa") + 1])
+            mr = float(words[words.index("mr") + 1])
+            mol = massa / mr
+            return f"Mol = {massa} / {mr} = {mol} mol"
+        else:
+            return "Soal kimia belum dikenali. Coba gunakan format seperti 'massa 18 mr 18'."
+    except Exception as e:
+        return f"Terjadi kesalahan saat menyelesaikan soal kimia: {e}"
