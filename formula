@@ -1,0 +1,33 @@
+def get_formulas(math.py):
+    return {
+        "Luas Lingkaran": "L = π × r²",
+        "Keliling Lingkaran": "K = 2 × π × r",
+        "Rumus Kuadrat": "x = (-b ± √(b² - 4ac)) / 2a",
+        "Turunan Fungsi": "f'(x) = lim(h→0) [f(x+h) - f(x)] / h",
+        "Integral Tak Tentu": "∫f(x) dx = F(x) + C",
+        "Teorema Pythagoras": "c² = a² + b²",
+        "Volume Kubus": "V = s³",
+        "Volume Tabung": "V = π × r² × t"
+    }
+def get_formulas(physics):
+    return {
+        "Hukum Newton II": "F = m × a",
+        "Energi Kinetik": "Ek = ½ × m × v²",
+        "Energi Potensial": "Ep = m × g × h",
+        "Usaha": "W = F × s × cos(θ)",
+        "Tekanan": "P = F / A",
+        "Hukum Ohm": "V = I × R",
+        "Daya Listrik": "P = V × I",
+        "Frekuensi Gelombang": "f = v / λ"
+    }
+def get_formulas(chemistry.py):
+    return {
+        "Hukum Avogadro": "V ∝ n (pada T dan P tetap)",
+        "Rumus Molaritas": "M = n / V",
+        "Rumus Mol": "n = massa / Mr",
+        "Hukum Gay-Lussac": "P1/T1 = P2/T2",
+        "Hukum Boyle": "P1 × V1 = P2 × V2",
+        "Persamaan Gas Ideal": "PV = nRT",
+        "pH Larutan": "pH = -log[H⁺]",
+        "Energi Ikatan": "ΔH = ∑E pemutusan - ∑E pembentukan"
+    }
